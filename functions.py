@@ -34,7 +34,8 @@ def sum_whole_numbers_descend(x):
 def factorial(x):
     if type(x) == float and x.is_integer == False:
         raise TypeError('factorials of non-integer numbers are beyond the scope of this function')
-#    elif
+    elif type(x) != int:
+        raise TypeError('input must have type int')
     elif x < 0:
         raise ValueError('factorial is not defined for negative integers')
     else:
