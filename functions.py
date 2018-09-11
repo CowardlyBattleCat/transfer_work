@@ -32,8 +32,9 @@ def sum_whole_numbers_descend(x):
     return sum_result
 
 def factorial(x):
-    if type(x) /= int:
-        raise ValueError('factorials of non-integer numbers are beyond the scope of this function')
+    if type(x) == float and x.is_integer == False:
+        raise TypeError('factorials of non-integer numbers are beyond the scope of this function')
+#    elif
     elif x < 0:
         raise ValueError('factorial is not defined for negative integers')
     else:
@@ -45,9 +46,10 @@ def factorial(x):
         return factorial
 
 def divisor(x):
+    x = abs(x)
     divisors = [1, -1]
     if x == 0:
-        return 'every integer'
+        return ValueError('cannot return all values--every integer is a divisor of 0')
     else:
 
 
@@ -57,7 +59,7 @@ def divisor(x):
 
 
 def main():
-    #call the example_function here
+    #call the functions and associated code here
     pass
 
 if __name__ == "__main__":

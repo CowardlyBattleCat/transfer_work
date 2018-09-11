@@ -2,6 +2,11 @@
 from functions import(
     f,
     sum_whole_numbers,
+    sign,
+    is_larger_than,
+    sum_whole_numbers_descend,
+    factorial,
+    divisor,
     )
 
 def test_f():
@@ -32,9 +37,10 @@ def test_sum_whole_numbers_descend():
 def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
-    assert factorial(-2) == 'undefined'
+    assert factorial(1.1) == TypeError('factorials of non-integer numbers are beyond the scope of this function')
+    assert factorial(-2) == ValueError('factorial is not defined for negative integers')
 
 def test_divisor():
     assert divisor(0) == 'every integer'
-    assert divisor(90) == [90, 45, 30, 18, 15, 12, 10, 9, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -9, -10, -12, -15, -18, -30, -45, -90]
-    assert divisor(-30) == [30, 15, 10, 6, 5, 3, ]
+    assert divisor(90) == [90, 45, 30, 18, 15, 10, 9, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -9, -10, -15, -18, -30, -45, -90]
+    assert divisor(-30) == [30, 15, 10, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -10, -15, -30]
