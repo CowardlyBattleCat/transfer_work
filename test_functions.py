@@ -47,7 +47,10 @@ def test_factorial():
         factorial(-2)
 
 def test_divisor():
-    with pytest.raises(ValueError):
-        divisor(0)
     assert divisor(90) == [90, 45, 30, 18, 15, 10, 9, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -9, -10, -15, -18, -30, -45, -90]
     assert divisor(-30) == [30, 15, 10, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -10, -15, -30]
+    assert divisor(63) == [63, 21, 9, 7, 3, 1, -1, -3, -7, -9, -21, -63]
+    with pytest.raises(ValueError):
+        divisor(0)
+    with pytest.raises(TypeError):
+        divisor('string')

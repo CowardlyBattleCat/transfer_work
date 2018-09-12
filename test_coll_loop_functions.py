@@ -4,9 +4,8 @@ from coll_loop_functions import(
     make_triangle,
     )
 
-#from pytest import raises
+import pytest
 
-#from unittest import assertRaises
 
 def test_fizz_buzz_sum():
     assert fizz_buzz_sum([3, 6, 5, 15, -4]) == 29

@@ -15,39 +15,17 @@ def fizz_buzz_sum(numbers, exclude=False):
       divisible by 3 or 5.
     '''
     result = 0
-    if exclude == False:
-
-#        selections = []
-        for i in numbers:
-            if (i%3 == 0) or (i%5 == 0):
-                result += i
-#                selections.append(i)
-
-    else:
-#        selections = []
+    if exclude == True:
         for i in numbers:
             if (i%3 != 0) and (i%5 != 0):
                 result += i
-#                selections.append(i)
+    else:
+        for i in numbers:
+            if (i%3 == 0) or (i%5 == 0):
+                result += i
     return result
 
-#    return sum(selections)
 
-'''    else:
-        selections = numbers
-#        for i in numbers:#would this work as well?
-        for i in selections:
-            if i%3 == 0:
-                selections.remove(i)
-            elif i%5 == 0:
-                selections.remove(i)
-            else:
-                pass
-    return sum(selections)
-
-'''
-
-print(fizz_buzz_sum([-5, 0, 2, -3, 3, 15 -5, 2], True))
 
 
 def make_triangle(n):
