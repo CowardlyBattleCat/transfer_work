@@ -1,7 +1,9 @@
 def f(x):
+    """Just a first function to help us test assert"""
     return x + 1
 
 def sum_whole_numbers(x):
+    
     sum_result = 0
     i = 1
     while i <= x:
@@ -32,7 +34,7 @@ def sum_whole_numbers_descend(x):
     return sum_result
 
 def factorial(x):
-    if type(x) == float and x.is_integer == False:
+    if (type(x) == float) and (x.is_integer == False):
         raise TypeError('factorials of non-integer numbers are beyond the scope of this function')
     elif type(x) != int:
         raise TypeError('input must have type int')
@@ -47,12 +49,13 @@ def factorial(x):
         return factorial
 
 def divisor(x):
-    x = abs(x)
+    '''x = abs(x)
     divisors = [1, -1]
     if x == 0:
         return ValueError('cannot return all values--every integer is a divisor of 0')
     else:
-
+    '''
+    pass
 
 
 

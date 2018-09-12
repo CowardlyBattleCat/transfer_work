@@ -9,6 +9,8 @@ from functions import(
     divisor,
     )
 
+import pytest
+
 def test_f():
     assert f(6) == 7
     assert f(-1) == 0
@@ -37,10 +39,15 @@ def test_sum_whole_numbers_descend():
 def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
-    assert factorial(1.1) == TypeError('factorials of non-integer numbers are beyond the scope of this function')
-    assert factorial(-2) == ValueError('factorial is not defined for negative integers')
+    with pytest.raises(TypeError):
+        factorial('string')
+    with pytest.raises(TypeError):
+        factorial(1.1)
+    with pytest.raises(ValueError):
+        factorial(-2)
 
 def test_divisor():
-    assert divisor(0) == 'every integer'
+    with pytest.raises(ValueError):
+        divisor(0)
     assert divisor(90) == [90, 45, 30, 18, 15, 10, 9, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -9, -10, -15, -18, -30, -45, -90]
     assert divisor(-30) == [30, 15, 10, 6, 5, 3, 2, 1, -1, -2, -3, -5, -6, -10, -15, -30]

@@ -3,7 +3,7 @@ def example_function():
 
 
 def main():
-    #call the example_function here
+    #call the functions and associated code here
     pass
 
 if __name__ == "__main__":
