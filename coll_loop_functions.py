@@ -105,6 +105,52 @@ def make_triangle(n):
 #            sum += n
 """
 
+def word_sentence_paragraph_count(path, word):
+    '''Takes in the path to a text file and a word returns a dictionary containing the following keys:
+
+    {
+        "word": The number times the word appears in the file.
+	"sentence": The number of sentences the word appears in.
+	"paragraphs": The number of paragraphs the word appears in.
+    }
+
+    Parameters
+    ----------
+    path: str
+      A path to a text file.
+    word: str
+      A word to count in the file.
+
+    Returns
+    -------
+    count_dict: dict
+    The dictionary described above.
+    '''
+    result = {'word':0, 'sentence':0, 'paragraph':0}
+    with open(path) as f:
+        text = f.read()
+        words = text.split()
+        result['word'] = words.count(word)
+
+        sentences = text.split('. ')
+
+    f.close()
+
+    return result
+
+"""
+code snippets here
+f = open('the_blue_carbuncle.txt')
+#use in ipython
+
+print('foo', end='str at end of each thing printed')
+#specific syntax for print function
+"""
+
+
+
+
+
 
 
 def main():
