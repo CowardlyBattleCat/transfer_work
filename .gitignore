@@ -3,3 +3,4 @@
 __pycache__/
 coll_loop_functions.pyc
 functions.pyc
+.DS_Store
